@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>大大小公司管理系统</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<script type="text/javascript" src="js/plugins/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/plugins/angularjs/angular.min.js"></script>
+</head>
+<body>
+	<div class="box" ng-app="login" ng-controller="loginController">
+		<div class="bg">
+			<canvas id="Mycanvas"></canvas>
+		</div>
+
+
+		<div class="login">
+			<div class="name"><i>大大小</i>公司管理系统</div>
+			<form class="form-horizontal" role="" name="loginData" ng-submit="submitForm()">
+				<div class="form-box">
+					<label for="username" class=""><i class="fa fa-user"></i></label>
+					<div class="input-box" ng-class="{ 'has-success':signUpForm.username.$valid}">
+						<input type="text" id="username" name="username" placeholder="请输入4-10位数的用户名" required ng-model="login.user" ng-minlength="4"  ng-maxlength="10" >
+						<!-- <p ng-cloak class="fa fa-check input_result success" ng-if="loginData.username.$valid"></p>
+						<p ng-cloak class="error" ng-if="(loginData.username.$error.minlength || loginData.username.$error.maxlength) && loginData.username.$touched">用户名长度应在4-10位之间</p> -->
+					</div>
+				</div>
+				<div class="form-box">
+					<label for="password" class=""><i class="fa fa-lock"></i></label>
+					<div class="input-box">
+						<input type="password" id="password" name="password" placeholder="请输入6-255位数的密码" required ng-model="login.passsword" ng-minlength="6"  ng-maxlength="255">
+						<!-- <p ng-cloak class="fa fa-check input_result success" ng-if="loginData.password.$valid">
+						<p ng-cloak class="error" ng-if="(loginData.password.$error.minlength || loginData.password.$error.maxlength) && loginData.password.$touched">密码长度应在6-255位之间</p> -->
+					</div>
+				</div>
+				<div class="form-box">
+					<label for="captcha" class=""><i class="fa fa-rocket"></i></label>
+					<div class="input-box">
+						<input type="text" class="captcha" id="captcha" name="captcha" placeholder="请输入验证码" required ng-model="login.captcha" ng-minlength="4"  ng-maxlength="4">
+						<div class="captcha-box">
+							<a id="change">  
+								<img src="img/captcha.jpg">
+								<!-- <img src="<c:url value='/client/captcha/generatecode'/>" id="kaptchaImage" /> -->
+							</a>
+
+						</div>
+					</div>
+				</div>
+				<div class="remember-box">
+					<input type="checkbox" required=""><label>记住密码</label>
+				</div>
+				<div class="form-box text-center">
+					<button type="submit" class="btn btn-primary btn-block btn-h" ng-disabled="loginData.$invalid">登录</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/bg/bg_zh.js"></script>
+<script type="text/javascript">
+var loginApp=angular.module("login",[]);
+loginApp.controller("loginController",function($scope){
+	$scope.submitForm=function(){
+		// if($scope.loginData.$valid&&$scope.loginData.username.value=="chenxs"&&$scope.loginData.password.value=="123456"){
+		if($scope.loginData.$valid){
+			console.log($scope.loginData.username);
+			alert("提交成功！");			
+		}else{
+			alert("请确认登录用户名是否填写正确");
+			console.log($scope.loginData.username);
+		}
+	};
+});
+</script>
+</html>

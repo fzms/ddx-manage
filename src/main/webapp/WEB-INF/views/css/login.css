@@ -1,0 +1,151 @@
+html,body{ 
+	height:100%;
+	min-height: 40em;
+	min-width: 50em;
+}
+
+.box{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: -webkit-radial-gradient(circle,rgb(25,44,77), rgb(0,191,254), #0AFFFC,rgb(133,206,139),rgb(25,44,77)); /* Safari 5.1 - 6.0 */
+    background: -o-radial-gradient(circle,rgb(25,44,77), rgb(0,191,254), #0AFFFC,rgb(133,206,139),rgb(25,44,77)); /* Opera 11.6 - 12.0 */
+    background: -moz-radial-gradient(circle,rgb(25,44,77), rgb(0,191,254), #0AFFFC,rgb(133,206,139),rgb(25,44,77)); /* Firefox 3.6 - 15 */
+    background: radial-gradient(circle,rgb(25,44,77), rgb(0,191,254), #0AFFFC,rgb(133,206,139),rgb(25,44,77)); /* 标准的语法（必须放在最后）*/
+}
+.bg{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.login{
+	width: 25em;
+	height: 25em;
+	padding:1em 2.9em;
+	border: 1px solid #eaeaea;
+	border-radius: 0.5em;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(255,255,255,0.5);
+}
+.name{
+	font-size: 1.5em;
+	text-align: center;	
+	height: 3em;
+	line-height: 3em;
+	margin-bottom: 0.5em;
+	color: #00a3d2;
+}
+.name i{	
+	font-size: 2em;
+	font-family: cursive;
+	color: transparent;
+	-webkit-text-stroke: 1px #00a3d2;
+}
+
+.form-box{
+	width: 100%;
+	height: 3em;
+	line-height: 3em;
+	margin-bottom: 1em;
+}
+.form-box:after{
+	clear: both;
+}
+.form-box label{
+	width: 3em;
+	height: 3em;
+	text-align: center;
+	line-height: 3em;
+	float: left;
+	margin-bottom:0;
+	background-color:#cccccc;
+}
+.form-box label i{
+	font-size: 1.5em;
+	height: 2em;
+	line-height: 2em;
+	color:#fff;
+}
+.form-box .input-box{
+	width: 16em;
+	height: 3em;
+	line-height: 3em;
+	float: left;
+}
+.form-box .input-box input{
+	display: block;
+	width: 100%;
+	height: 3em;
+	line-height: 3em;
+	padding:0 0.5em;
+	outline: none;
+	border: 0;
+}
+.form-box .input-box .captcha{
+	width: 50%;
+	float: left;
+}
+.form-box .captcha-box{
+	width: 50%;
+	height: 3em;
+	float: left;
+	padding-left: 1em;
+}
+.form-box .captcha-box a{
+	display: block;
+	cursor: pointer;
+}
+.form-box .captcha-box img{
+	display: block;
+	width: 100%;
+	height: 3em;
+}
+.remember-box{
+	height: 1em;
+	line-height: 1em;
+	margin-bottom: 1em;
+}
+.remember-box:after{
+	clear: both;
+}
+.remember-box input{
+	margin: 0px;
+	height: 1em;
+	width: 1em;
+	margin-right:5px;
+	float: left;
+}
+.remember-box label{
+	font-weight: normal;
+	height: 1em;
+	line-height: 1em;
+	margin:0;
+	float: left;
+}
+.btn-h{
+	height: 3em;
+	line-height: 3em;
+	padding:0;
+}
+
+
+.input_result{
+	position: relative;
+	top: -27px;
+	left: 240px;
+}
+p.success{
+	color: #3c763d;
+}
+.error{
+	color: #c30000;
+}
+input.error{
+	border:1px solid #c30000; 
+}
