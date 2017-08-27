@@ -3,13 +3,13 @@
 <head>
 	<meta charset="utf-8" />
 	<title>大大小公司管理系统</title>
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/login.css">
-	<script type="text/javascript" src="js/plugins/jquery/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/plugins/angularjs/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/login.css">
+	<script type="text/javascript" src="../js/plugins/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../js/plugins/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/plugins/angularjs/angular.min.js"></script>
 </head>
 <body>
 	<div class="box" ng-app="login" ng-controller="loginController">
@@ -43,7 +43,7 @@
 						<input type="text" class="captcha" id="captcha" name="captcha" placeholder="请输入验证码" required ng-model="login.captcha" ng-minlength="4"  ng-maxlength="4">
 						<div class="captcha-box">
 							<a id="change">  
-								<img src="img/captcha.jpg">
+								<img src="../img/captcha.jpg">
 								<!-- <img src="<c:url value='/client/captcha/generatecode'/>" id="kaptchaImage" /> -->
 							</a>
 
@@ -60,7 +60,7 @@
 		</div>
 	</div>
 </body>
-<script type="text/javascript" src="js/bg/bg_zh.js"></script>
+<script type="text/javascript" src="../js/bg/bg_zh.js"></script>
 <script type="text/javascript">
 var loginApp=angular.module("login",[]);
 loginApp.controller("loginController",function($scope){
