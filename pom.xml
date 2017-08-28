@@ -187,6 +187,19 @@
             <artifactId>pagehelper</artifactId>
             <version>4.1.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.10</version>
+        </dependency>
+
+        <!--captcha 配置-->
+        <dependency>
+            <groupId>kaptcha</groupId>
+            <artifactId>kaptcha</artifactId>
+            <version>2.3.2_2</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>platform</finalName>
