@@ -13,8 +13,12 @@
 </head>
 <body>
 	<div class="box" ng-app="login" ng-controller="loginController">
-		<div class="bg">
-			<canvas id="Mycanvas"></canvas>
+		<div class="bgBox">
+            <!--没有交互的canvas背景 仿知乎-->
+			<!--<canvas id="Mycanvas"></canvas>-->
+
+            <!--canvas 粒子运动 背景-->
+            <div id="particles-js"></div>
 		</div>
 
 
@@ -60,7 +64,9 @@
 		</div>
 	</div>
 </body>
-<script type="text/javascript" src="../js/bg/bg_zh.js"></script>
+<!--<script type="text/javascript" src="../js/bg/bg_zh.js"></script>-->
+<script  type="text/javascript" src="../js/bg/particles.js"></script>
+<script type="text/javascript" src="../js/bg/bg_particles.js"></script>
 <script type="text/javascript">
 var loginApp=angular.module("login",[]);
 loginApp.controller("loginController",function($scope){

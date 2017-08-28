@@ -2,22 +2,37 @@ html,body{
 	height:100%;
 	min-height: 40em;
 	min-width: 50em;
+    overflow: hidden;;
 }
 
 .box{
 	width: 100%;
 	height: 100%;
 	position: relative;
-	background: -webkit-radial-gradient(circle, #5D9FFF,#B8DCFF , #6BBBFF , #2cacd1,#35eb93); /* Safari 5.1 - 6.0 */
+    background-image: url("../img/login_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.box2{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: -webkit-radial-gradient(circle, #5D9FFF,#B8DCFF , #6BBBFF , #2cacd1,#35eb93); /* Safari 5.1 - 6.0 */
     background: -o-radial-gradient(circle,#5D9FFF,#B8DCFF , #6BBBFF , #2cacd1,#35eb93); /* Opera 11.6 - 12.0 */
     background: -moz-radial-gradient(circle, #5D9FFF,#B8DCFF , #6BBBFF , #2cacd1,#35eb93); /* Firefox 3.6 - 15 */
     background: radial-gradient(circle, #5D9FFF,#B8DCFF , #6BBBFF , #2cacd1,#35eb93); /* 标准的语法（必须放在最后）*/
+
 }
-.bg{
+.bgBox{
 	width: 100%;
 	height: 100%;
 	position: relative;
 	overflow: hidden;
+}
+#particles-js{
+    width:100%;
+    height:100%;
 }
 .login{
 	width: 25em;
@@ -29,7 +44,7 @@ html,body{
 	margin: auto;
 	left: 0;
 	top: 0;
-	right: 0;
+	right: -40%;
 	bottom: 0;
 	background-color: rgba(255,255,255,0.5);
 }
