@@ -8,10 +8,10 @@ html,body{
 	width: 100%;
 	height: 100%;
 	position: relative;
-	background: -webkit-radial-gradient(circle,rgb(25,44,77), rgb(0,191,254), #0AFFFC,rgb(133,206,139),rgb(25,44,77)); /* Safari 5.1 - 6.0 */
-    background: -o-radial-gradient(circle,rgb(25,44,77), rgb(0,191,254), #0AFFFC,rgb(133,206,139),rgb(25,44,77)); /* Opera 11.6 - 12.0 */
-    background: -moz-radial-gradient(circle,rgb(25,44,77), rgb(0,191,254), #0AFFFC,rgb(133,206,139),rgb(25,44,77)); /* Firefox 3.6 - 15 */
-    background: radial-gradient(circle,rgb(25,44,77), rgb(0,191,254), #0AFFFC,rgb(133,206,139),rgb(25,44,77)); /* 标准的语法（必须放在最后）*/
+	background: -webkit-radial-gradient(circle, #5D9FFF,#B8DCFF , #6BBBFF , #2cacd1,#35eb93); /* Safari 5.1 - 6.0 */
+    background: -o-radial-gradient(circle,#5D9FFF,#B8DCFF , #6BBBFF , #2cacd1,#35eb93); /* Opera 11.6 - 12.0 */
+    background: -moz-radial-gradient(circle, #5D9FFF,#B8DCFF , #6BBBFF , #2cacd1,#35eb93); /* Firefox 3.6 - 15 */
+    background: radial-gradient(circle, #5D9FFF,#B8DCFF , #6BBBFF , #2cacd1,#35eb93); /* 标准的语法（必须放在最后）*/
 }
 .bg{
 	width: 100%;
