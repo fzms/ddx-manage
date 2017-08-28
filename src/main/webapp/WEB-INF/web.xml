@@ -56,4 +56,14 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
     <!-- 设置servlet编码结束 -->
+
+    <!--验证码servlet-->
+    <servlet>
+        <servlet-name>kaptcha</servlet-name>
+        <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>kaptcha</servlet-name>
+        <url-pattern>/kaptcha.jpg</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -1,0 +1,16 @@
+1.生成/刷新验证码
+GET
+/kaptcha/generatecode
+
+2.验证验证码
+GET
+/kaptcha/checkcode
+参数：kaptcha   用户输入的验证码
+
+3.登录
+POST
+/system/user/login
+参数：
+登录名：loginName
+密码：password
+以对象的形式传输

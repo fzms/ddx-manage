@@ -158,7 +158,7 @@
     <logger name="java.sql.ResultSet" level="debug" />
 
     <!-- 业务日志logger -->
-    <logger name="com.icinfo" level="info" additivity="true">
+    <logger name="com.ddx" level="info" additivity="true">
         <appender-ref ref="BUSINESS_LOG_FILE"/>
     </logger>
 

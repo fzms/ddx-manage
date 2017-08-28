@@ -13,25 +13,59 @@
     <description>Spring公共配置</description>
 
     <!-- 使用annotation 自动注册bean,并检查@Required,@Autowired的属性已被注入 -->
-    <context:component-scan base-package="com.icinfo">
+    <context:component-scan base-package="com.ddx">
         <context:exclude-filter type="annotation"
                                 expression="org.springframework.stereotype.Controller"/>
         <context:exclude-filter type="annotation"
                                 expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
     </context:component-scan>
 
+    <!--kaptcha 配置-->
+    <bean id="kaptchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">
+        <property name="config">
+            <bean class="com.google.code.kaptcha.util.Config">
+                <constructor-arg>
+                    <props>
+                        <prop key="kaptcha.border">no</prop>
+                        <!--<prop key="kaptcha.border.color">105,179,90</prop>-->
+                        <!--<prop key="kaptcha.border.thicknes  s"></prop>-->
+                        <!--<prop key="kaptcha.producer.impl"></prop>-->
+                        <!--<prop key="kaptcha.textproducer.impl"></prop>-->
+                        <!--<prop key="kaptcha.textproducer.char.string"></prop>-->
+                        <prop key="kaptcha.textproducer.char.length">4</prop>
+                        <prop key="kaptcha.textproducer.font.names">Arial,Courier</prop>
+                        <prop key="kaptcha.textproducer.font.size">43</prop>
+                        <prop key="kaptcha.textproducer.font.color">red</prop>
+                        <!--<prop key="kaptcha.textproducer.char.space"></prop>-->
+                        <!--<prop key="kaptcha.noise.impl"></prop>-->
+                        <!--<prop key="kaptcha.noise.color"></prop>-->
+                        <!--<prop key="kaptcha.obscurificator.impl"></prop>-->
+                        <!--<prop key="kaptcha.word.impl"></prop>-->
+                        <!--<prop key="kaptcha.background.impl"></prop>-->
+                        <!--<prop key="kaptcha.background.clear.from"></prop>-->
+                        <!--<prop key="kaptcha.background.clear.to"></prop>-->
+                        <prop key="kaptcha.image.width">135</prop>
+                        <prop key="kaptcha.image.height">50</prop>
+                        <prop key="kaptcha.session.key">code</prop>
+                        <!--<prop key="kaptcha.session.date"></prop>-->
+                    </props>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+
     <!-- 通用session工厂配置 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <!-- 使用通用数据源 -->
         <property name="dataSource" ref="dataSource"/>
-        <property name="typeAliasesPackage" value="com.icinfo.platform.*.model"/>
+        <property name="typeAliasesPackage" value="com.ddx.manage.*.model"/>
         <property name="mapperLocations">
             <list>
                 <value>
-                    classpath*:/com/icinfo/**/mapper/mapping/*Mapper.xml
+                    classpath*:/com/ddx/**/mapper/mapping/*Mapper.xml
                 </value>
                 <value>
-                    classpath*:/com/icinfo/**/dao/mapping/*Mapper.xml
+                    classpath*:/com/ddx/**/dao/mapping/*Mapper.xml
                 </value>
             </list>
         </property>
@@ -58,7 +92,7 @@
 
     <!-- 通用接口包扫描 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.icinfo.platform.*.mapper,com.icinfo.platform.*.dao"/>
+        <property name="basePackage" value="com.ddx.manage.*.mapper,com.ddx.manage.*.dao"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
