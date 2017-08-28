@@ -3,8 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/public.css">
+    <script type="text/javascript" src="../js/plugins/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/angularjs/angular.min.js"></script>
+    <script type="text/javascript" src="../js/public.js"></script>
 </head>
 <body>
-    Hello World！！！
+    <header></header>
+    <div  class="content">
+        <aside class="col-lg-2 col-md-3 col-sm-12 no-padding"  ng-app="navApp" ng-controller="navController">
+            <!--<ul class="nav1">-->
+                <!--<li><a><i class="fa fa-calendar"></i>产品管理</a></li>-->
+                <!--<li class="active">-->
+                    <!--<a><i class="fa fa-home"></i>仓库管理</a>-->
+                    <!--<ul class="nav2">-->
+                        <!--<li><a><i class="fa fa-envira"></i>原料管理</a></li>-->
+                        <!--<li><a><i class="fa fa-unlock"></i>配件管理</a></li>-->
+                        <!--<li><a><i class="fa fa-wrench"></i>工具管理</a></li>-->
+                        <!--<li><a><i class="fa fa-rocket"></i>机器管理</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li><a><i class="fa fa-gavel"></i>订单管理</a></li>-->
+                <!--<li><a><i class="fa fa-handshake-o"></i>客户管理</a></li>-->
+                <!--<li><a><i class="fa fa-user"></i>员工管理</a></li>-->
+                <!--<li><a><i class="fa fa-gears"></i>系统管理</a></li>-->
+            <!--</ul>-->
+            <ul class="nav1">
+                <li ng-repeat="navMenu in navList">
+                    <a><i class="fa {{navMenu.icon}}"></i>{{navMenu.name}}</a>
+                    <ul class="nav2" ng-hide="navList.subNav.length>0">
+                        <li ng-repeat="groupMenu in navList.subNav">
+                            <a><i class="fa {{groupMenu.icon}}"></i>{{groupMenu.name}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <section class="col-lg-10 col-md-9 col-sm-12">111</section >
+    </div>
+    <footer> 大大小有限公司 版权所有 </footer>
 </body>
+<script src="../js/navController.js"></script>
 </html>
