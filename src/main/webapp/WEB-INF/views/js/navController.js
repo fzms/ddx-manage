@@ -1,5 +1,5 @@
 /**
- * Created by Administrator on 2017/8/28.
+ * Created by cxs on 2017/8/28.
  */
 var navApp=angular.module("navApp",[]);
 navApp.controller("navController",function($scope){

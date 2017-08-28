@@ -35,7 +35,7 @@
             <ul class="nav1">
                 <li ng-repeat="navMenu in navList">
                     <a><i class="fa {{navMenu.icon}}"></i>{{navMenu.name}}</a>
-                    <ul class="nav2" ng-hide="navList.subNav.length>0">
+                    <ul class="nav2" ng-show="navList.subNav.length>0">
                         <li ng-repeat="groupMenu in navList.subNav">
                             <a><i class="fa {{groupMenu.icon}}"></i>{{groupMenu.name}}</a>
                         </li>
