@@ -104,3 +104,19 @@ ul.nav2>li.active>a{
     color: #00a3d2;
     background-color: #2c3744;
 }
+.logo a img{
+    height: 50px;
+}
+.navToggle{
+    width: 3.5em;
+    height: 3.5em;
+    display: block;
+    position: absolute;
+    top:0;
+    right: 0;
+}
+.navToggle i{
+    font-size: 2em;
+    margin-top: 0.4em;
+    margin-left: 0.4em;
+}
