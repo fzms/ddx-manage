@@ -5,21 +5,7 @@ var navApp=angular.module("navApp",[]);
 navApp.controller("navController",['$scope','$rootScope','$http','$location', function($scope,$http) {
     $scope.navList = [
         {
-            "name": "产品管理", "url": "a", "icon": "fa-calendar", "flag": "1",
-            "subNav": [
-                {
-                    "name": "原料管理", "url": "a", "icon": "fa-envira"
-                },
-                {
-                    "name": "配件管理", "url": "a", "icon": "fa-unlock"
-                },
-                {
-                    "name": "工具管理", "url": "a", "icon": "fa-wrench"
-                },
-                {
-                    "name": "机器管理", "url": "a", "icon": "fa-rocket"
-                }
-            ]
+            "name": "产品管理", "url": "a", "icon": "fa-calendar", "flag": "1"
         },
         {
             "name": "仓库管理", "url": "a", "icon": "fa-home", "flag": "2",
@@ -60,7 +46,7 @@ navApp.controller("navController",['$scope','$rootScope','$http','$location', fu
         }
     ];
     //第一种写法
-    $scope.actionMark={a:$scope.navList[0].name,b:$scope.navList[0].subNav[0] ? $scope.navList[0].subNav[0].name:""};
+    $scope.actionMark={a:$scope.navList[0].name,b:$scope.navList[0].subNav ? $scope.navList[0].subNav[0].name:""};
     console.log($scope.actionMark);
 
     // 第二种写法,后面navMenuActive加上判断
