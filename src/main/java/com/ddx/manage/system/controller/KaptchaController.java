@@ -1,7 +1,9 @@
 package com.ddx.manage.system.controller;
 
 import com.ddx.manage.common.annotation.IgnoreSecurity;
+import com.ddx.manage.common.bean.AjaxResult;
 import com.ddx.manage.common.constant.Constant;
+import com.ddx.manage.common.exception.AuthException;
 import com.google.code.kaptcha.Producer;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.slf4j.Logger;
@@ -82,11 +84,11 @@ public class KaptchaController {
      */
     @RequestMapping(value = "/checkcode", method = RequestMethod.GET)
     @ResponseBody
-    public boolean checkcode(@RequestParam(value = "kaptcha", required = true) String kaptcha, HttpSession session) {
+    public AjaxResult checkcode(@RequestParam(value = "kaptcha", required = true) String kaptcha, HttpSession session) throws Exception {
         Object textCode = session.getAttribute(Constant.SESSION_ATTR_TEXT_CODE);
         if (textCode == null || !kaptcha.equals(textCode.toString())) {
-            return false;
+            throw new AuthException(AuthException.KAPTCHA_CHECK_ERROR);
         }
-        return true;
+        return AjaxResult.success("校验成功！");
     }
 }

@@ -66,4 +66,9 @@
         <servlet-name>kaptcha</servlet-name>
         <url-pattern>/kaptcha.jpg</url-pattern>
     </servlet-mapping>
+
+    <!--&lt;!&ndash; 欢迎页面 &ndash;&gt;-->
+    <!--<welcome-file-list>-->
+        <!--<welcome-file>login.html</welcome-file>-->
+    <!--</welcome-file-list>-->
 </web-app>
