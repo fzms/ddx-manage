@@ -3,5 +3,8 @@
  */
 // var mainApp=angular.module("headerApp",[]);
 mainApp.controller("headerController",['$scope','$http', function($scope,$http) {
-
+    $scope.navToggle=function(){
+        $scope.$broadcast('to-child', 'child');
+        $scope.$emit('to-parent', 'parent');
+    };
 }]);
