@@ -95,6 +95,7 @@ ul.nav2>li{
 }
 ul.nav2>li>a{
     padding-left: 3em;
+    cursor: pointer;
 }
 ul.nav2>li>a:hover{
     color: #00a3d2;
