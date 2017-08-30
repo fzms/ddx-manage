@@ -110,6 +110,19 @@ section{
     line-height: 3.5em;
     position: relative;
 }
+.signBox{
+    display: inline-block;
+    line-height: 3.5em;
+}
+.signBox>a{
+    color: #fff;
+}
+.signBox:hover>a{
+    color:#337ab7;
+}
+.signBox i{
+    margin-left: 3px;
+}
 .signOut{
     text-align: left;
     padding:0.2em 1em;
