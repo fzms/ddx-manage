@@ -1,8 +1,8 @@
 /**
  * Created by cxs on 2017/8/28.
  */
-var navApp=angular.module("navApp",[]);
-navApp.controller("navController",['$scope','$rootScope','$http','$location', function($scope,$http) {
+// var mainApp=angular.module("navApp",[]);
+mainApp.controller("navController",['$scope','$http', function($scope,$http) {
     $scope.navList = [
         {
             "name": "产品管理", "url": "a", "icon": "fa-calendar", "flag": "1"

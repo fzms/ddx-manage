@@ -1,0 +1,14 @@
+<ul class="nav1">
+    <li data-ng-repeat="navMenu in navList"
+        data-ng-click="changeNavMenu(navMenu.name,navMenu.subNav[0].name)"
+        data-ng-class="{'active':navMenuActive(navMenu.name,navMenu[0].subNav.name)}">
+        <a><i class="fa {{navMenu.icon?navMenu.icon:'fa-send'}}"></i><span data-ng-bind="navMenu.name"></span></a>
+        <ul class="nav2" data-ng-if="navMenuActive(navMenu.name)">
+            <li data-ng-repeat="groupMenu in navMenu.subNav"
+                data-ng-click="changeNavMenu(navMenu.name,groupMenu.name);$event.stopPropagation();"
+                data-ng-class="{'active':navMenuActive(navMenu.name,groupMenu.name)}">
+                <a ><i class="fa {{groupMenu.icon?groupMenu.icon:'fa-send-o'}}"></i><span data-ng-bind="groupMenu.name"></span></a>
+            </li>
+        </ul>
+    </li>
+</ul>

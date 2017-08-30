@@ -8,39 +8,27 @@
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/public.css">
-    <script type="text/javascript" src="../js/plugins/jquery/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="../js/plugins/bootstrap/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/plugins/angularjs/angular.min.js"></script>
-    <script type="text/javascript" src="../js/public.js"></script>
 </head>
-<body>
-    <header>
-        <div class="col-lg-3 col-md-6 col-sm-8 logo"><a><img src="../img/logo.png"></a></div>
-        <div class="loginUser">
+<body data-ng-app="mainApp" data-ng-controller="appController">
+    <header data-ng-include="'tpl/headerTpl.html'"
+            data-ng-controller="headerController">
 
-        </div>
-        <a class="navToggle hidden-lg hidden-md"><i class="fa fa-reorder"></i></a>
     </header>
     <div  class="content">
-        <aside class="col-lg-2 col-md-3 col-sm-12 no-padding hidden-sm hidden-xs"  ng-app="navApp" ng-controller="navController">
-            <ul class="nav1">
-                <li ng-repeat="navMenu in navList"
-                    ng-click="changeNavMenu(navMenu.name,navMenu.subNav[0].name)"
-                    ng-class="{'active':navMenuActive(navMenu.name,navMenu[0].subNav.name)}">
-                    <a><i class="fa {{navMenu.icon?navMenu.icon:'fa-send'}}"></i><span ng-bind="navMenu.name"></span></a>
-                    <ul class="nav2" ng-if="navMenuActive(navMenu.name)">
-                        <li ng-repeat="groupMenu in navMenu.subNav"
-                            ng-click="changeNavMenu(navMenu.name,groupMenu.name);$event.stopPropagation();"
-                            ng-class="{'active':navMenuActive(navMenu.name,groupMenu.name)}">
-                            <a ><i class="fa {{groupMenu.icon?groupMenu.icon:'fa-send-o'}}"></i><span ng-bind="groupMenu.name"></span></a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </aside>
+        <aside class="col-lg-2 col-md-3 col-sm-12 no-padding hidden-sm hidden-xs"
+               data-ng-include="'tpl/navTpl.html'"
+               data-ng-controller="navController"></aside>
         <section class="col-lg-10 col-md-9 col-sm-12">111</section >
     </div>
-    <footer> 大大小有限公司 版权所有 </footer>
+    <footer data-ng-include="'tpl/footerTpl.html'"
+            data-ng-controller="footerController"> </footer>
 </body>
+<script type="text/javascript" src="../js/plugins/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../js/plugins/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/plugins/angularjs/angular.min.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script src="../js/mainApp.js"></script>
+<script src="../js/headerController.js"></script>
 <script src="../js/navController.js"></script>
+<script src="../js/footerController.js"></script>
 </html>
