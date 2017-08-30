@@ -3,14 +3,9 @@
  */
 // var mainApp=angular.module("navApp",[]);
 mainApp.controller("navController",['$scope','$http', function($scope,$http) {
-
-        $scope.$on('to-parent', function(d,data) {
-            console.log(data);        //平级得不到值
-        });
-        $scope.$on('to-child', function(d,data) {
-            console.log(data);        //平级得不到值
-        });
-
+    $scope.$on('showState', function(d,data){
+        // console.log(data);
+    });
 
         $scope.navList = [
         {

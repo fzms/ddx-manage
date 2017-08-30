@@ -11,10 +11,11 @@ var mainApp = angular.module("mainApp", [
 ]);
 mainApp.controller('appController', ['$scope', '$rootScope', function($scope, $rootScope) {
     // $scope.$on('$viewContentLoaded', function() {});
-    $scope.$on('to-parent', function(d,data) {
-        console.log(data);         //父级能得到值
+
+    //接收headerController的事件
+    $scope.$on('showState', function(d,data) {
+        console.log(data);
     });
-    $scope.$on('to-child', function(d,data) {
-        console.log(data);         //子级得不到值
-    });
+    //向navController传递事件
+    $scope.$broadcast('showState',data);
 }]);
