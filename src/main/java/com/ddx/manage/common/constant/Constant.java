@@ -10,6 +10,16 @@ public class Constant {
     public static final String SESSION_USER_INFO = "SESSION_USER_INFO";
 
     /**
+     * 用户Token名称 .
+     */
+    public static final String CLIENT_TOKEN_NAME = "token";
+
+    /**
+     * request中的用户Id属性名称.
+     */
+    public static final String REQUEST_ATTR_USER_ID = "REQUEST_ATTR_USER_ID";
+
+    /**
      * 登录状态异常提示信息
      */
     public static final String LOGIN_ERROR_INFO = "请重新登陆";
