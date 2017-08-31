@@ -9,13 +9,18 @@ var mainApp = angular.module("mainApp", [
     // "ngSanitize",
     // "toaster"
 ]);
-mainApp.controller('appController', ['$scope', '$rootScope', function($scope, $rootScope) {
-    // $scope.$on('$viewContentLoaded', function() {});
 
-    //接收headerController的事件
-    $scope.$on('showState', function(d,data) {
-        console.log(data);
-    });
-    //向navController传递事件
-    $scope.$broadcast('showState',data);
+// controll nav dowm and up
+//创建服务，返回一个change函数，函数广播showNav的值（全局）
+mainApp.service('navService', function($rootScope) {
+    return {
+        change: function(showNav) {
+            $rootScope.$broadcast("valueChange", showNav);
+        }
+    }
+});
+
+
+mainApp.controller('appController', ['$scope', '$rootScope', function($scope, $rootScope) {
+
 }]);

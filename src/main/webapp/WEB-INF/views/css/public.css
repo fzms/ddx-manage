@@ -28,6 +28,7 @@ header{
     height: 3.5em;
     background-color: #2b3643;
     width: 100%;
+    min-width: 30em;
     position: fixed;
     top: 0;
     left: 0;
@@ -142,6 +143,16 @@ section{
 /*header css end*/
 
 /*nav css begin*/
+.content aside{
+    transition: all 5s;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.showNav{
+    display: block!important;
+    padding-bottom: 0;
+}
 
 ul.nav1{
     padding-top: 1px;

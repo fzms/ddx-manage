@@ -2,12 +2,16 @@
  * Created by cxs on 2017/8/30.
  */
 // var mainApp=angular.module("headerApp",[]);
-mainApp.controller("headerController",['$scope','$http', function($scope,$http) {
-    $scope.showNav=false ;
+mainApp.controller("headerController",['$scope','$http','$rootScope','navService', function($scope,$http,$rootScope,navService) {
+    // controll nav dowm and up
+    //点击事件控制导航， $watch监听showNav值改变状态
+    $scope.showNav=false;
     $scope.navToggle=function() {
         $scope.showNav=!($scope.showNav);
         // console.log($scope.showNav);
-        //向父级mainApp传导航的状态值
-        $scope.$emit('showState',$scope.showNav);
     };
+    $scope.$watch("showNav", function(showNav) {
+        navService.change(showNav);
+    });
+
 }]);

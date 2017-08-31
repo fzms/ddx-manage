@@ -16,8 +16,9 @@
     <div  class="content">
         <aside class="col-lg-2 col-md-3 col-sm-12 no-padding hidden-sm hidden-xs"
                data-ng-include="'tpl/navTpl.html'"
-               data-ng-controller="navController"></aside>
-        <section class="col-lg-10 col-md-9 col-sm-12">111</section >
+               data-ng-controller="navController"
+               data-ng-class="{showNav:showNav}"></aside>
+        <section data-ui-view class="col-lg-10 col-md-9 col-sm-12">111</section >
     </div>
     <footer data-ng-include="'tpl/footerTpl.html'"
             data-ng-controller="footerController"> </footer>

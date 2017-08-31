@@ -2,12 +2,15 @@
  * Created by cxs on 2017/8/28.
  */
 // var mainApp=angular.module("navApp",[]);
-mainApp.controller("navController",['$scope','$http', function($scope,$http) {
-    $scope.$on('showState', function(d,data){
-        // console.log(data);
+mainApp.controller("navController",['$scope','$http','$rootScope','navService', function($scope,$http,$rootScope,navService) {
+    //controll nav dowm and up
+    //$接收event和data
+    $scope.$on("valueChange",function(e,m){
+        $scope.showNav=m;
+        console.log("showNav:"+$scope.showNav);
     });
 
-        $scope.navList = [
+    $scope.navList = [
         {
             "name": "产品管理", "url": "a", "icon": "fa-calendar", "flag": "1"
         },
@@ -57,14 +60,6 @@ mainApp.controller("navController",['$scope','$http', function($scope,$http) {
     // $scope.actionMark=undefined;
 
     $scope.changeNavMenu = function (a,b){
-        // if(b===undefined){
-        //
-        //     // b=$scope.actionMark.find(m => m.name===a).subNav[0].name;
-        //
-        //     b=$scope.navList.find(function(m){
-        //         return m.name===a;
-        //     }).subNav[0].name;
-        // };
         $scope.actionMark={
             a:a,
             b:b
