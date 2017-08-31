@@ -2,7 +2,7 @@
  * Created by cxs on 2017/8/28.
  */
 // var mainApp=angular.module("navApp",[]);
-mainApp.controller("navController",['$scope','$http','$rootScope','navService', function($scope,$http,$rootScope,navService) {
+app.controller("navController",['$scope','$http','$rootScope','navService', function($scope,$http,$rootScope,navService) {
     //controll nav dowm and up
     //$接收event和data
     $scope.$on("valueChange",function(e,m){

@@ -7,9 +7,10 @@
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../js/plugins/ui-grid/ui-grid.css">
     <link rel="stylesheet" type="text/css" href="../css/public.css">
 </head>
-<body data-ng-app="mainApp" data-ng-controller="appController">
+<body data-ng-app="app" data-ng-controller="appController">
     <header data-ng-include="'tpl/headerTpl.html'"
             data-ng-controller="headerController">
     </header>
@@ -18,7 +19,10 @@
                data-ng-include="'tpl/navTpl.html'"
                data-ng-controller="navController"
                data-ng-class="{showNav:showNav}"></aside>
-        <section data-ui-view class="col-lg-10 col-md-9 col-sm-12">111</section >
+        <section data-ng-controller="mainController" class="col-lg-10 col-md-9 col-sm-12">
+            <div data-ui-grid="gridOptions" style="width: 100%; height: 500px; text-align: center;" ui-grid-edit ui-grid-pagination ui-grid-selection ui-grid-exporter ui-grid-resize-columns ui-grid-auto-resize>
+            </div>
+        </section >
     </div>
     <footer data-ng-include="'tpl/footerTpl.html'"
             data-ng-controller="footerController"> </footer>
@@ -26,10 +30,15 @@
 <script type="text/javascript" src="../js/plugins/jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="../js/plugins/bootstrap/bootstrap.min.js"></script>
 <script type="text/javascript" src="../js/plugins/angularjs/angular.min.js"></script>
+<script type="text/javascript" src="../js/plugins/ui-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script type="text/javascript" src="../js/plugins/ui-grid/ui-grid.js"></script>
 <script type="text/javascript" src="../js/plugins/angularjs/angular-animate.min.js"></script>
+<script type="text/javascript" src="../js/plugins/pdfmake/pdfmake.js"></script>
+<script type="text/javascript" src="../js/plugins/pdfmake/vfs_fonts.js"></script>
 <script type="text/javascript" src="../js/public.js"></script>
 <script src="../js/mainApp.js"></script>
 <script src="../js/headerController.js"></script>
 <script src="../js/navController.js"></script>
+<script src="../js/mainController.js"></script>
 <script src="../js/footerController.js"></script>
 </html>

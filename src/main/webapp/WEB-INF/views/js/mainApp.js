@@ -1,10 +1,20 @@
 /**
  * Created by cxs on 2017/8/30.
  */
-var mainApp = angular.module("mainApp", [
-    "ngAnimate"
+var app = angular.module("app", [
+    "ngAnimate",
     // "ui.router",
-    // "ui.bootstrap",
+    "ui.grid",
+    "ui.grid.selection",
+    "ui.grid.edit",
+    "ui.grid.edit",
+    "ui.grid.edit",
+    "ui.grid.exporter",
+    "ui.grid.pagination",
+    "ui.grid.resizeColumns",
+    "ui.grid.autoResize",
+    "ui.bootstrap"
+
     // "oc.lazyLoad",
     // "ngSanitize",
     // "toaster"
@@ -12,7 +22,7 @@ var mainApp = angular.module("mainApp", [
 
 // controll nav dowm and up
 //创建服务，返回一个change函数，函数广播showNav的值（全局）
-mainApp.service('navService', function($rootScope) {
+app.service('navService', function($rootScope) {
     return {
         change: function(showNav) {
             $rootScope.$broadcast("valueChange", showNav);
@@ -21,6 +31,6 @@ mainApp.service('navService', function($rootScope) {
 });
 
 
-mainApp.controller('appController', ['$scope', '$rootScope', function($scope, $rootScope) {
+app.controller('appController', ['$scope', '$rootScope', function($scope, $rootScope) {
 
 }]);
