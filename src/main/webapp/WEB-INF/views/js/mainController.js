@@ -1,10 +1,9 @@
 /**
  * Created by cxs on 2017/8/31.
  */
-app.controller('mainController', function($scope,$http) {
-// app.controller('mainController', function($scope,i18nService,$http) {
+ app.controller('mainController', function($scope,i18nService,$http) {
     // 国际化；
-    // i18nService.setCurrentLang("zh-cn");
+    i18nService.setCurrentLang("zh-cn");
 
     $scope.gridOptions = {
         data: 'myData',
@@ -28,7 +27,7 @@ app.controller('mainController', function($scope,$http) {
                 pinnedRight: false,
                 enableColumnMenu: false,
                 enableSorting: false,
-                cellTemplate: '<div class="ui-grid-cell-contents text-center"><button type="button" class="btn blue-madison btn-xs" ng-click="grid.appScope.edit(row)" ><i class="fa fa-edit"></i><span style="padding-left: 2px;">编辑</span></button>&nbsp;<button type="button" class="btn blue-madison btn-xs" ng-click="grid.appScope.delete(row)" ><i class="fa fa-remove"></i><span style="padding-left: 2px;">删除</span></button></div> '
+                cellTemplate: '<div class="ui-grid-cell-contents text-center"><a class="btn blue-madison btn-xs" ng-click="grid.appScope.edit(row)" ><i class="fa fa-edit"></i><span style="padding-left: 2px;">编辑</span></a>&nbsp;<a type="button" class="btn blue-madison btn-xs" ng-click="grid.appScope.delete(row)" ><i class="fa fa-remove"></i><span style="padding-left: 2px;">删除</span></a></div> '
             }
         ],
 
@@ -57,11 +56,6 @@ app.controller('mainController', function($scope,$http) {
         enableRowSelection : true, // 行选择是否可用，默认为true;
         enableSelectAll : true, // 选择所有checkbox是否可用，默认为true;
         enableSelectionBatchEvent : true, //默认true
-        isRowSelectable: function(row){ //GridRow
-            if(row.entity.age > 45){
-                row.grid.api.selection.selectRow(row.entity); // 选中行
-            }
-        },
         modifierKeysToMultiSelect: false ,//默认false,为true时只能 按ctrl或shift键进行多选, multiSelect 必须为true;
         multiSelect: true ,// 是否可以选择多个,默认为true;
         noUnselect: false,//默认false,选中后是否可以取消选中
