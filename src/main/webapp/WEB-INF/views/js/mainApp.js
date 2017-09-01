@@ -2,7 +2,7 @@
  * Created by cxs on 2017/8/30.
  */
 var app = angular.module("app", [
-    "ngAnimate",
+    // "ngAnimate",
     // "ui.router",
     "ui.grid",
     "ui.grid.selection",
