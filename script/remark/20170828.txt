@@ -9,7 +9,7 @@ GET
 
 3.登录
 POST
-/system/user/login
+/login
 参数：
 用户输入的验证码 ：kaptcha
 登录名：loginName
@@ -17,3 +17,7 @@ POST
 登录名和密码以对象的形式传输
 
 登录成功后，从session中获取 CLIENT_TOKEN 和 SESSION_USER_INFO
+
+4.退出登录
+GET
+/logout
