@@ -46,27 +46,27 @@
     </bean>
 
     <!-- jasckson2对象映射-->
-    <!--<bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper">-->
-        <!--<property name="serializationInclusion">-->
-            <!--<value type="com.fasterxml.jackson.annotation.JsonInclude.Include">ALWAYS</value>-->
-        <!--</property>-->
-    <!--</bean>-->
+    <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper">
+        <property name="serializationInclusion">
+            <value type="com.fasterxml.jackson.annotation.JsonInclude.Include">ALWAYS</value>
+        </property>
+    </bean>
 
     <!-- 配置消息转换服务 -->
-    <!--<mvc:annotation-driven>-->
-        <!--<mvc:message-converters>-->
-            <!--&lt;!&ndash; JSON消息格式器 &ndash;&gt;-->
-            <!--<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">-->
-                <!--<property name="supportedMediaTypes">-->
-                    <!--<list>-->
-                        <!--<value>application/json;charset=UTF-8</value>-->
-                    <!--</list>-->
-                <!--</property>-->
-                <!--<property name="objectMapper" ref="objectMapper"/>-->
-                <!--<property name="prettyPrint" value="true"/>-->
-            <!--</bean>-->
-        <!--</mvc:message-converters>-->
-    <!--</mvc:annotation-driven>-->
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <!-- JSON消息格式器 -->
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/json;charset=UTF-8</value>
+                    </list>
+                </property>
+                <property name="objectMapper" ref="objectMapper"/>
+                <property name="prettyPrint" value="true"/>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 
     <!--解决@ResponseBody 中文乱码-->
     <mvc:annotation-driven>

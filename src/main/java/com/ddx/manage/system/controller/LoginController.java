@@ -6,11 +6,16 @@ import com.ddx.manage.common.constant.Constant;
 import com.ddx.manage.common.manage.RedisManage;
 import com.ddx.manage.common.manage.TokenManage;
 import com.ddx.manage.common.util.EncryptUtils;
+import com.ddx.manage.common.util.StringUtils;
 import com.ddx.manage.system.model.User;
 import com.ddx.manage.system.service.IUserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -18,10 +23,13 @@ import java.util.List;
 /**
  * Created by Administrator on 201728.
  */
-@Controller
-@RequestMapping("/system/user/")
-@SessionAttributes(Constant.SESSION_USER_INFO)
-public class UserController {
+@RestController
+public class LoginController {
+    /**
+     * 日志记录器
+     */
+    private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
+
     @Autowired
     private IUserService userService;
 
@@ -41,8 +49,7 @@ public class UserController {
      * @throws Exception 异常
      */
     @IgnoreSecurity
-    @RequestMapping(value = "login", method = RequestMethod.POST)
-    @ResponseBody
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public AjaxResult login(@RequestParam(value = "kaptcha") String kaptcha, User user, HttpSession session) throws Exception {
         Object textCode = session.getAttribute(Constant.SESSION_ATTR_TEXT_CODE);
         if (textCode == null || !kaptcha.equals(textCode.toString())) {
@@ -65,7 +72,29 @@ public class UserController {
         String token = tokenManage.generateClientToken(rUser);
         session.setAttribute(Constant.CLIENT_TOKEN_NAME, token);
 
-        session.setAttribute(Constant.SESSION_USER_INFO, redisManage.getUserInfo(user.getId()));
+        session.setAttribute(Constant.SESSION_USER_INFO, redisManage.getUserInfo(rUser.getId()));
         return AjaxResult.success("登录成功！");
+    }
+
+    /**
+     * 退出登录
+     *
+     * @param session session
+     * @return 结果
+     * @throws Exception 异常
+     */
+    @IgnoreSecurity
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public AjaxResult logout(HttpSession session) throws Exception {
+        String token = (String) session.getAttribute(Constant.CLIENT_TOKEN_NAME);
+        try {
+            if (StringUtils.isNotBlank(token)) {
+                tokenManage.deleteClientToken(token);
+            }
+        } catch (Exception e) {
+            logger.error("删除客户端token失败！", e);
+        }
+        session.invalidate();
+        return AjaxResult.success("成功！");
     }
 }
