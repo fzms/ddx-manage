@@ -2,7 +2,7 @@
 GET
 /kaptcha/generatecode
 
-2.验证验证码
+2.校验验证码（不使用，在登录方法中校验）
 GET
 /kaptcha/checkcode
 参数：kaptcha   用户输入的验证码
@@ -11,6 +11,9 @@ GET
 POST
 /system/user/login
 参数：
+用户输入的验证码 ：kaptcha
 登录名：loginName
 密码：password
-以对象的形式传输
+登录名和密码以对象的形式传输
+
+登录成功后，从session中获取 CLIENT_TOKEN 和 SESSION_USER_INFO

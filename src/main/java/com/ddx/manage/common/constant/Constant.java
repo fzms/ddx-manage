@@ -12,7 +12,7 @@ public class Constant {
     /**
      * 用户Token名称 .
      */
-    public static final String CLIENT_TOKEN_NAME = "token";
+    public static final String CLIENT_TOKEN_NAME = "CLIENT_TOKEN";
 
     /**
      * request中的用户Id属性名称.

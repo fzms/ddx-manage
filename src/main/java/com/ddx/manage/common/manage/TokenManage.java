@@ -2,6 +2,8 @@ package com.ddx.manage.common.manage;
 
 import com.ddx.manage.common.util.StringUtils;
 import com.ddx.manage.system.model.User;
+import com.ddx.manage.system.model.UserInfo;
+import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +30,10 @@ public class TokenManage {
         redisManage.setClientToken(clientToken, user.getId());
 
         // 3.设置用户信息
-        redisManage.setUserInfo(user.getId(), user);
+        UserInfo userInfo = new UserInfo();
+        BeanUtils.copyProperties(userInfo, user);
+
+        redisManage.setUserInfo(user.getId(), userInfo);
 
         //4.返回token
         return clientToken;
