@@ -3,7 +3,8 @@
  */
 var app = angular.module("app", [
     // "ngAnimate",
-    // "ui.router",
+    "ui.router",
+    "oc.lazyLoad",
     "ui.grid",
     "ui.grid.selection",
     "ui.grid.edit",
@@ -14,8 +15,6 @@ var app = angular.module("app", [
     "ui.grid.resizeColumns",
     "ui.grid.autoResize",
     "ui.bootstrap"
-
-    // "oc.lazyLoad",
     // "ngSanitize",
     // "toaster"
 ]);
