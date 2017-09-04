@@ -26,7 +26,7 @@
                 pinnedRight: false,
                 enableColumnMenu: false,
                 enableSorting: false,
-                cellTemplate: '<div class="ui-grid-cell-contents text-center"><a class="btn-xs btn-c" ng-click="grid.appScope.edit(row)" ><i class="fa fa-edit"></i><span style="padding-left: 2px;">编辑</span></a>&nbsp;<a type="button" class="btn-xs btn-c" ng-click="grid.appScope.delete(row)" ><i class="fa fa-remove"></i><span style="padding-left: 2px;">删除</span></a></div> '
+                cellTemplate: '<div class="ui-grid-cell-contents text-center"><a class="btn-xs btn-blue" ng-click="grid.appScope.edit(row)" ><i class="fa fa-edit"></i><span style="padding-left: 2px;">编辑</span></a>&nbsp;<a type="button" class="btn-xs btn-blue" ng-click="grid.appScope.delete(row)" ><i class="fa fa-remove"></i><span style="padding-left: 2px;">删除</span></a></div> '
             }
         ],
 
