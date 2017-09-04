@@ -262,9 +262,30 @@ ul.nav2>li.active>a{
     background-color: #ed6b75;
     color: #fff;
 }
-
+.btn-c:hover{
+    color: #c30000;
+}
 /*table header css begin*/
 /*ui-grid css react begin*/
+.ui-grid-pager-row-count-picker select{
+    padding:5px 0px 5px 5px;
+    width: 45px;
+}
+.ui-grid-pager-control input{
+    padding:5px 0px 5px 5px;
+    width: 35px;
+}
+.ui-grid-pager-control{
+    margin: 0 5px;
+}
+.ui-grid-pager-control button{
+    padding: 5px;
 
-
+}
+.ng-isolate-scope:hover{
+    background-color: inherit;
+}
+.ui-grid-row :hover{
+    background-color: inherit;
+}
 /*ui-grid css react end*/

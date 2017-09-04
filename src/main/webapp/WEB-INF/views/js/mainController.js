@@ -21,16 +21,16 @@
             {
                 field: 'edit',
                 displayName: '操 作',
-                width: '150',
-                enableCellEdit: false,
+                width: '120',
                 fixed: true,
                 pinnedRight: false,
                 enableColumnMenu: false,
                 enableSorting: false,
-                cellTemplate: '<div class="ui-grid-cell-contents text-center"><a class="btn blue-madison btn-xs" ng-click="grid.appScope.edit(row)" ><i class="fa fa-edit"></i><span style="padding-left: 2px;">编辑</span></a>&nbsp;<a type="button" class="btn blue-madison btn-xs" ng-click="grid.appScope.delete(row)" ><i class="fa fa-remove"></i><span style="padding-left: 2px;">删除</span></a></div> '
+                cellTemplate: '<div class="ui-grid-cell-contents text-center"><a class="btn-xs btn-c" ng-click="grid.appScope.edit(row)" ><i class="fa fa-edit"></i><span style="padding-left: 2px;">编辑</span></a>&nbsp;<a type="button" class="btn-xs btn-c" ng-click="grid.appScope.delete(row)" ><i class="fa fa-remove"></i><span style="padding-left: 2px;">删除</span></a></div> '
             }
         ],
 
+        enableCellEdit: false,//是否可编辑cell
         enableSorting: true, //是否排序
         useExternalSorting: false, //是否使用自定义排序规则
         enableGridMenu: true, //是否显示grid 菜单
