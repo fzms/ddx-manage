@@ -18,16 +18,16 @@ app.controller("navController",['$scope','$http','$rootScope','navService', func
             "name": "仓库管理", "url": "/warehouse", "icon": "fa-home", "flag": "2",
             "subNav": [
                 {
-                    "name": "原料管理", "url": "/material", "icon": "fa-envira"
+                    "name": "原料管理", "url": "/warehouse/material", "icon": "fa-envira"
                 },
                 {
-                    "name": "配件管理", "url": "/parts", "icon": "fa-unlock"
+                    "name": "配件管理", "url": "/warehouse/parts", "icon": "fa-unlock"
                 },
                 {
-                    "name": "工具管理", "url": "/tool", "icon": "fa-wrench"
+                    "name": "工具管理", "url": "/warehouse/tool", "icon": "fa-wrench"
                 },
                 {
-                    "name": "机器管理", "url": "/machine", "icon": "fa-rocket"
+                    "name": "机器管理", "url": "/warehouse/machine", "icon": "fa-rocket"
                 }
             ]
         },
@@ -59,7 +59,7 @@ app.controller("navController",['$scope','$http','$rootScope','navService', func
     // 第二种写法,后面navMenuActive加上判断
     // $scope.actionMark=undefined;
 
-    $scope.changeNavMenu = function (a,b){
+    $scope.changeNavMenu = function (a,b,url){
         $scope.actionMark={
             a:a,
             b:b
