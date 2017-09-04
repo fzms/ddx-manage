@@ -31,5 +31,5 @@ app.service('navService', function($rootScope) {
 
 
 app.controller('appController', ['$scope', '$rootScope', function($scope, $rootScope) {
-
+    console.log("main");
 }]);

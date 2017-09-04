@@ -12,42 +12,42 @@ app.controller("navController",['$scope','$http','$rootScope','navService', func
 
     $scope.navList = [
         {
-            "name": "产品管理", "url": "a", "icon": "fa-calendar", "flag": "1"
+            "name": "产品管理", "url": "/product", "icon": "fa-calendar", "flag": "1"
         },
         {
-            "name": "仓库管理", "url": "a", "icon": "fa-home", "flag": "2",
+            "name": "仓库管理", "url": "/warehouse", "icon": "fa-home", "flag": "2",
             "subNav": [
                 {
-                    "name": "原料管理", "url": "a", "icon": "fa-envira"
+                    "name": "原料管理", "url": "/material", "icon": "fa-envira"
                 },
                 {
-                    "name": "配件管理", "url": "a", "icon": "fa-unlock"
+                    "name": "配件管理", "url": "/parts", "icon": "fa-unlock"
                 },
                 {
-                    "name": "工具管理", "url": "a", "icon": "fa-wrench"
+                    "name": "工具管理", "url": "/tool", "icon": "fa-wrench"
                 },
                 {
-                    "name": "机器管理", "url": "a", "icon": "fa-rocket"
+                    "name": "机器管理", "url": "/machine", "icon": "fa-rocket"
                 }
             ]
         },
         {
-            "name": "订单管理", "url": "a", "icon": "fa-gavel", "flag": "3"
+            "name": "订单管理", "url": "/order", "icon": "fa-gavel", "flag": "3"
         },
         {
-            "name": "客户管理", "url": "a", "icon": "fa-handshake-o", "flag": "4"
+            "name": "客户管理", "url": "/customer", "icon": "fa-handshake-o", "flag": "4"
         },
         {
-            "name": "员工管理", "url": "a", "icon": "fa-user", "flag": "5"
+            "name": "员工管理", "url": "/staff", "icon": "fa-user", "flag": "5"
         },
         {
-            "name": "系统管理", "url": "a", "icon": "fa-gears", "flag": "6",
+            "name": "系统管理", "url": "/system", "icon": "fa-gears", "flag": "6",
             "subNav": [
                 {
-                    "name": "账号管理", "url": "a", "icon": "fa-fort-awesome"
+                    "name": "账号管理", "url": "/account", "icon": "fa-fort-awesome"
                 },
                 {
-                    "name": "导航管理", "url": "a", "icon": "fa-flag"
+                    "name": "菜单管理", "url": "/menu", "icon": "fa-flag"
                 }
             ]
         }
