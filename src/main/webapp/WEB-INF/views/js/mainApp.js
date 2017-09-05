@@ -8,8 +8,6 @@ var app = angular.module("app", [
     "ui.grid",
     "ui.grid.selection",
     "ui.grid.edit",
-    "ui.grid.edit",
-    "ui.grid.edit",
     "ui.grid.exporter",
     "ui.grid.pagination",
     "ui.grid.resizeColumns",
