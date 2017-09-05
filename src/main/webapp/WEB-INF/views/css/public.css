@@ -285,6 +285,9 @@ ul.nav2>li.active>a{
     background-color: #ed6b75;
     color: #fff;
 }
+.btnPub.groupDelete:hover{
+    background-color: #ffd35a;
+}
 .btn-blue:hover{
     color: #c30000;
 }
