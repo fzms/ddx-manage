@@ -24,6 +24,28 @@ a:hover{
     text-decoration: none;
     cursor: pointer;
 }
+
+/*滚动条样式 begin*/
+.ofStyle::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+.ofStyle::-webkit-scrollbar
+{
+    width: 10px;
+    height: 10px;
+    background-color: #F5F5F5;
+}
+.ofStyle::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+/*滚动条样式 end*/
+
 header{
     height: 3.5em;
     background-color: #2b3643;
@@ -90,6 +112,7 @@ aside a i{
 section{
     height: 100%;
     background-color: #fff;
+    overflow: auto;
 }
 
 @media (max-width:991px) {
@@ -280,12 +303,16 @@ ul.nav2>li.active>a{
 }
 .ui-grid-pager-control button{
     padding: 5px;
-
 }
 .ng-isolate-scope:hover{
     background-color: inherit;
 }
 .ui-grid-row :hover{
     background-color: inherit;
+}
+.uiGridBox{
+    width: 100%;
+    height: 450px;
+    text-align: center;
 }
 /*ui-grid css react end*/
