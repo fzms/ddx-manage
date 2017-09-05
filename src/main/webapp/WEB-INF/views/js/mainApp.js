@@ -117,6 +117,66 @@ app.config(function($stateProvider,$urlRouterProvider){
                 }]
             }
         })
+        .state("/order",{
+            url:"/order",
+            controller:"orderController",
+            templateUrl:"tpl/tablePage.html",
+            resolve:{
+                deps:["$ocLazyLoad",function($ocLazyLoad){
+                    return $ocLazyLoad.load("../js/controller/orderController.js");
+                }]
+            }
+        })
+        .state("/customer",{
+            url:"/customer",
+            controller:"customerController",
+            templateUrl:"tpl/tablePage.html",
+            resolve:{
+                deps:["$ocLazyLoad",function($ocLazyLoad){
+                    return $ocLazyLoad.load("../js/controller/customerController.js");
+                }]
+            }
+        })
+        .state("/staff",{
+            url:"/staff",
+            controller:"staffController",
+            templateUrl:"tpl/tablePage.html",
+            resolve:{
+                deps:["$ocLazyLoad",function($ocLazyLoad){
+                    return $ocLazyLoad.load("../js/controller/staffController.js");
+                }]
+            }
+        })
+        .state("/system",{
+            url:"/system",
+            controller:"systemController",
+            templateUrl:"tpl/tablePage.html",
+            resolve:{
+                deps:["$ocLazyLoad",function($ocLazyLoad){
+                    return $ocLazyLoad.load("../js/controller/systemController.js");
+                }]
+            }
+        })
+        .state("/system/account",{
+            url:"/system/account",
+            controller:"accountController",
+            templateUrl:"tpl/tablePage.html",
+            resolve:{
+                deps:["$ocLazyLoad",function($ocLazyLoad){
+                    return $ocLazyLoad.load("../js/controller/accountController.js");
+                }]
+            }
+        })
+        .state("/system/menu",{
+            url:"/system/menu",
+            controller:"menuController",
+            templateUrl:"tpl/tablePage.html",
+            resolve:{
+                deps:["$ocLazyLoad",function($ocLazyLoad){
+                    return $ocLazyLoad.load("../js/controller/menuController.js");
+                }]
+            }
+        })
 });
 
 

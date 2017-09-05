@@ -44,10 +44,10 @@ app.controller("navController",['$scope','$http','$rootScope','navService', func
             "name": "系统管理", "url": "/system", "icon": "fa-gears", "flag": "6",
             "subNav": [
                 {
-                    "name": "账号管理", "url": "/account", "icon": "fa-fort-awesome"
+                    "name": "账号管理", "url": "/system/account", "icon": "fa-fort-awesome"
                 },
                 {
-                    "name": "菜单管理", "url": "/menu", "icon": "fa-flag"
+                    "name": "菜单管理", "url": "/system/menu", "icon": "fa-flag"
                 }
             ]
         }
