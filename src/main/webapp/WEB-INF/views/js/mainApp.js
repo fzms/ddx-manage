@@ -73,7 +73,7 @@ app.config(function($stateProvider,$urlRouterProvider){
             templateUrl:"tpl/tablePage.html",
             resolve:{
                 deps:["$ocLazyLoad",function($ocLazyLoad){
-                    return $ocLazyLoad.load("../js/controller/materialController.js");
+                    return $ocLazyLoad.load("../js/controller/warehouseController.js");
                 }]
             }
         })
@@ -121,5 +121,5 @@ app.config(function($stateProvider,$urlRouterProvider){
 
 
 app.controller("appController", ["$scope", "$rootScope", function($scope, $rootScope) {
-    console.log("main");
+    // console.log("main");
 }]);

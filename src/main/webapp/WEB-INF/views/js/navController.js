@@ -7,7 +7,7 @@ app.controller("navController",['$scope','$http','$rootScope','navService', func
     //$接收event和data
     $scope.$on("valueChange",function(e,m){
         $scope.showNav=m;
-        console.log("showNav:"+$scope.showNav);
+        // console.log("showNav:"+$scope.showNav);
     });
 
     $scope.navList = [
@@ -64,7 +64,7 @@ app.controller("navController",['$scope','$http','$rootScope','navService', func
             a:a,
             b:b
         };
-        console.log($scope.actionMark);
+        // console.log($scope.actionMark);
     };
     $scope.navMenuActive = function (a,b){
 

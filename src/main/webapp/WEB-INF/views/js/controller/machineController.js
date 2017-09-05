@@ -1,8 +1,9 @@
 /**
  * Created by cxs on 2017/9/4.
  */
+var app = angular.module("/warehouse/machine",[]);
 app.controller("machineController", function($scope,$http,$rootScope,i18nService) {
-        console.log("machine page");
+    console.log("machine page");
     // 国际化；
     i18nService.setCurrentLang("zh-cn");
 
@@ -90,7 +91,7 @@ app.controller("machineController", function($scope,$http,$rootScope,i18nService
         //$scope.myData = mydefalutData.slice(firstRow, firstRow + pageSize);
     };
 
-    var mydefalutData = [{ name: "Moroni", age: 50, birthday: "Oct 28, 1970", salary: "60,000" },
+    var mydefalutData = [{ name: "机器管理", age: 50, birthday: "Oct 28, 1970", salary: "60,000" },
         { name: "Tiancum", age: 43, birthday: "Feb 12, 1985", salary: "70,000" },
         { name: "Jacob", age: 27, birthday: "Aug 23, 1983", salary: "50,000" },
         { name: "Nephi", age: 29, birthday: "May 31, 2010", salary: "40,000" },
