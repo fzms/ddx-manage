@@ -1,8 +1,9 @@
 /**
  * Created by cxs on 2017/9/4.
  */
-app.controller("materialController",['$scope','$http','$rootScope','navService', function($scope,$http,$rootScope,navService) {
+var app = angular.module("/warehouse/material",[]);
+app.controller("materialController", function($scope,$http,$rootScope,i18nService) {
         console.log("material page")
 
-    }]
+    }
 );

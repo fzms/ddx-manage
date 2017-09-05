@@ -1,7 +1,9 @@
 /**
  * Created by cxs on 2017/9/4.
  */
-app.controller("toolController",['$scope','$http','$rootScope','navService', function($scope,$http,$rootScope,navService) {
+var app = angular.module("/warehouse/tool",[]);
+app.controller("toolController" ,function($scope,$http,$rootScope,i18nService) {
+
         console.log("tool page")
-    }]
+    }
 );

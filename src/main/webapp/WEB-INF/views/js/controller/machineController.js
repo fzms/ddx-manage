@@ -1,7 +1,7 @@
 /**
  * Created by cxs on 2017/9/4.
  */
-app.controller("machineController",['$scope','$http','$rootScope','navService', function($scope,$http,$rootScope,navService) {
+app.controller("machineController", function($scope,$http,$rootScope,i18nService) {
         console.log("machine page");
     // 国际化；
     i18nService.setCurrentLang("zh-cn");
@@ -107,5 +107,5 @@ app.controller("machineController",['$scope','$http','$rootScope','navService', 
         { name: "Enos", age: 34, birthday: "Aug 3, 2008", salary: "30,000" }];
 
     getPage(1, $scope.gridOptions.paginationPageSize);
-    }]
+    }
 );

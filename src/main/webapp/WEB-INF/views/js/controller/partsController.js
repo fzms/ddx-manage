@@ -1,7 +1,8 @@
 /**
  * Created by cxs on 2017/9/4.
  */
-app.controller("partsController",['$scope','$http','$rootScope','navService', function($scope,$http,$rootScope,navService) {
+var app = angular.module("/warehouse/parts",[]);
+app.controller("partsController", function($scope,$http,$rootScope,i18nService) {
         console.log("parts page")
-    }]
+    }
 );

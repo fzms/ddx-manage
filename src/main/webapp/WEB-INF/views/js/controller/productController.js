@@ -1,6 +1,7 @@
 /**
  * Created by cxs on 2017/09/04.
  */
+var app = angular.module("/product",[]);
 app.controller('productController', function($scope,i18nService,$http) {
     console.log("product page");
 
