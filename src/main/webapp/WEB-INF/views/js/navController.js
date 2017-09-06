@@ -59,7 +59,7 @@ app.controller("navController",['$scope','$http','$rootScope','navService', func
     // 第二种写法,后面navMenuActive加上判断
     // $scope.actionMark=undefined;
 
-    $scope.changeNavMenu = function (a,b,url){
+    $scope.changeNavMenu = function (a,b){
         $scope.actionMark={
             a:a,
             b:b
