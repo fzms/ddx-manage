@@ -3,7 +3,14 @@
  */
 var app = angular.module("/system",[]);
 app.controller("systemController" ,function($scope,$http,$rootScope,i18nService) {
-    console.log("system page")
+    console.log("system page");
+
+    //$接收event和data
+    $scope.$on("crumbChange",function(e,m){
+        $rootScope.actionMark=m;
+        // console.log("actionMark.a:"+$scope.actionMark.a);
+        // console.log("actionMark.b:"+$scope.actionMark.b);
+    });
         // 国际化；
         i18nService.setCurrentLang("zh-cn");
 

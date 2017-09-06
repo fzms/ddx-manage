@@ -3,7 +3,8 @@
  */
 var app = angular.module("/warehouse/tool",[]);
 app.controller("toolController" ,function($scope,$http,$rootScope,i18nService) {
-    console.log("tool page")
+    console.log("tool page");
+
         // 国际化；
         i18nService.setCurrentLang("zh-cn");
 

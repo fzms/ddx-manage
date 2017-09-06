@@ -3,7 +3,8 @@
  */
 var app = angular.module("/system/menu",[]);
 app.controller("menuController" ,function($scope,$http,$rootScope,i18nService) {
-    console.log("menu page")
+    console.log("menu page");
+
         // 国际化；
         i18nService.setCurrentLang("zh-cn");
 

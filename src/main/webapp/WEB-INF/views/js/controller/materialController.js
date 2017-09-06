@@ -4,6 +4,7 @@
 var app = angular.module("/warehouse/material",[]);
 app.controller("materialController", function($scope,$http,$rootScope,i18nService) {
     console.log("material page");
+
     // 国际化；
     i18nService.setCurrentLang("zh-cn");
 

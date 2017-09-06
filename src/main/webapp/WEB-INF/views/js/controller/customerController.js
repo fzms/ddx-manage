@@ -3,7 +3,8 @@
  */
 var app = angular.module("/customer",[]);
 app.controller("customerController" ,function($scope,$http,$rootScope,i18nService) {
-    console.log("customer page")
+    console.log("customer page");
+
         // 国际化；
         i18nService.setCurrentLang("zh-cn");
 

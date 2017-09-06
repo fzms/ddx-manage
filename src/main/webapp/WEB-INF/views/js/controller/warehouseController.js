@@ -4,6 +4,7 @@
 var app = angular.module("/warehouse",[]);
 app.controller("warehouseController",function($scope,$http,$rootScope,i18nService) {
     console.log("warehouse page");
+
         // 国际化；
         i18nService.setCurrentLang("zh-cn");
 

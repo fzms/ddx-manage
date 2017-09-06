@@ -2,12 +2,12 @@
     <!--面包屑导航，显示路径 begin-->
     <div class="navCrumb">
         <i class="fa fa-home"></i>
-        <a>产品管理</a>
-        <a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;产品管理</a>
+        <a>{{actionMark.a}}</a>
+        <a data-ng-if="actionMark.b">&nbsp;&nbsp;&gt;&nbsp;&nbsp;{{actionMark.b}}</a>
     </div>
     <!--面包屑导航，显示路径 end-->
     <div class="tableHeader">
-        <div class="navLocation"><i class="fa fa-envira"></i>产品管理</div>
+        <div class="navLocation"><i class="fa fa-envira"></i>{{actionMark.b?actionMark.b:actionMark.a}}</div>
         <div class="btnBox">
             <a class="btnPub new">新增</a>
             <a class="btnPub groupDelete">批量删除</a>

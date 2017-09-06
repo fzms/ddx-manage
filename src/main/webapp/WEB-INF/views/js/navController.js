@@ -2,7 +2,7 @@
  * Created by cxs on 2017/8/28.
  */
 // var mainApp=angular.module("navApp",[]);
-app.controller("navController",['$scope','$http','$rootScope','navService', function($scope,$http,$rootScope,navService) {
+app.controller("navController", function($scope,$http,$rootScope,navService,crumbService) {
     //controll nav dowm and up
     //$接收event和data
     $scope.$on("valueChange",function(e,m){
@@ -54,7 +54,7 @@ app.controller("navController",['$scope','$http','$rootScope','navService', func
     ];
     //第一种写法
     $scope.actionMark={a:$scope.navList[0].name,b:$scope.navList[0].subNav ? $scope.navList[0].subNav[0].name:""};
-    console.log($scope.actionMark);
+    // console.log($scope.actionMark);
 
     // 第二种写法,后面navMenuActive加上判断
     // $scope.actionMark=undefined;
@@ -78,8 +78,8 @@ app.controller("navController",['$scope','$http','$rootScope','navService', func
         }else{
             return $scope.actionMark.a===a &&  $scope.actionMark.b===b;
         }
-
     };
-
-}]
-);
+    $scope.$watch("actionMark",function(actionMark){
+        crumbService.change(actionMark);
+    });
+});

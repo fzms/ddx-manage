@@ -4,6 +4,7 @@
 var app = angular.module("/warehouse/parts",[]);
 app.controller("partsController", function($scope,$http,$rootScope,i18nService) {
     console.log("parts page");
+
     // 国际化；
     i18nService.setCurrentLang("zh-cn");
 

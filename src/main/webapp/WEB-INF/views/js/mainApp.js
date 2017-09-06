@@ -27,6 +27,16 @@ app.service("navService", function($rootScope) {
     }
 });
 
+//创建服务，改变路径导航
+app.service("crumbService",function ($rootScope) {
+    return{
+        change:function(actionMark){
+            $rootScope.$broadcast("crumbChange", actionMark);
+            // console.log(actionMark);
+        }
+    };
+});
+
 //懒加载配置
 app.config(function ($provide, $compileProvider, $controllerProvider, $filterProvider) {
         app.controller = $controllerProvider.register;
@@ -181,5 +191,10 @@ app.config(function($stateProvider,$urlRouterProvider){
 
 
 app.controller("appController", ["$scope", "$rootScope", function($scope, $rootScope) {
-    // console.log("main");
+    //$接收event和data
+    $scope.$on("crumbChange",function(e,m){
+        $rootScope.actionMark=m;
+        // console.log("actionMark.a:"+$scope.actionMark.a);
+        // console.log("actionMark.b:"+$scope.actionMark.b);
+    });
 }]);

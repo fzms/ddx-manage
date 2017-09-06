@@ -3,7 +3,8 @@
  */
 var app = angular.module("/staff",[]);
 app.controller("staffController" ,function($scope,$http,$rootScope,i18nService) {
-    console.log("staff page")
+    console.log("staff page");
+
         // 国际化；
         i18nService.setCurrentLang("zh-cn");
 
