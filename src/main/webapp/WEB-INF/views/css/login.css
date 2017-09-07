@@ -102,21 +102,21 @@ html,body{
 	outline: none;
 	border: 0;
 }
-.form-box .input-box .captcha{
+.form-box .input-box .kaptcha{
 	width: 50%;
 	float: left;
 }
-.form-box .captcha-box{
+.form-box .kaptcha-box{
 	width: 50%;
 	height: 3em;
 	float: left;
 	padding-left: 1em;
 }
-.form-box .captcha-box a{
+.form-box .kaptcha-box a{
 	display: block;
 	cursor: pointer;
 }
-.form-box .captcha-box img{
+.form-box .kaptcha-box img{
 	display: block;
 	width: 100%;
 	height: 3em;
