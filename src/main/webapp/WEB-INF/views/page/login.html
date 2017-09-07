@@ -24,11 +24,11 @@
 			<div class="name"><i>大大小</i>公司管理系统</div>
 			<form class="form-horizontal" role="" name="loginData" data-ng-submit="submitForm()">
 				<div class="form-box">
-					<label for="username" class=""><i class="fa fa-user"></i></label>
-					<div class="input-box" data-ng-class="{ 'has-success':signUpForm.username.$valid}">
+					<label for="loginName" class=""><i class="fa fa-user"></i></label>
+					<div class="input-box" data-ng-class="{ 'has-success':signUpForm.loginName.$valid}">
 						<input type="text" id="loginName" name="loginName" placeholder="请输入4-10位数的用户名" required data-ng-model="login.loginName" data-ng-minlength="4"  data-ng-maxlength="10" >
-						<!-- <p ng-cloak class="fa fa-check input_result success" ng-if="loginData.username.$valid"></p>
-						<p ng-cloak class="error" ng-if="(loginData.username.$error.minlength || loginData.username.$error.maxlength) && loginData.username.$touched">用户名长度应在4-10位之间</p> -->
+						<!-- <p ng-cloak class="fa fa-check input_result success" ng-if="loginData.loginName.$valid"></p>
+						<p ng-cloak class="error" ng-if="(loginData.loginName.$error.minlength || loginData.loginName.$error.maxlength) && loginData.username.$touched">用户名长度应在4-10位之间</p> -->
 					</div>
 				</div>
 				<div class="form-box">

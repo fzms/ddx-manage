@@ -17,7 +17,7 @@ loginApp.controller("loginController",function($scope,$http){
                 console.log("success");
             }, function (data) {
                 console.log("login error");
-                console.log($scope.loginData);
+                // console.log($scope.loginData);
             });
         }else{
             console.log($scope.loginData.loginName);
