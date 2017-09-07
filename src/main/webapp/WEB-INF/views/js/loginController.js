@@ -6,16 +6,11 @@ loginApp.controller("loginController",function($scope,$http){
     //获取验证码
     $scope.kaptcha=function(ev){
         console.log("success:"+ev.target.src);
-        $http.get("/kaptcha/generatecode").then(function(data){
-            console.log("success:"+data.data);
+        $http.get("/kaptcha/generatecode").then(function(){
+            $('#kaptchaImage').hide().attr('src', '/kaptcha/generatecode').fadeIn();
         },function(){
             console.log("error");
         });
-
-        // ,function(data){
-        //     // $('#kaptchaImage').hide().attr('src', '/kaptcha/generatecode');
-        //     console.log("data:"+data);
-        // }
     };
 
     //点击提交
