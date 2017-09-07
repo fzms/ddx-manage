@@ -7,14 +7,15 @@ import com.ddx.manage.common.manage.RedisManage;
 import com.ddx.manage.common.manage.TokenManage;
 import com.ddx.manage.common.util.EncryptUtils;
 import com.ddx.manage.common.util.StringUtils;
+import com.ddx.manage.system.dto.UserDto;
 import com.ddx.manage.system.model.User;
 import com.ddx.manage.system.service.IUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
@@ -42,7 +43,6 @@ public class LoginController {
     /**
      * 登录
      *
-     * @param kaptcha 用户输入的验证码
      * @param user    用户信息
      * @param session session
      * @return 结果
@@ -50,9 +50,9 @@ public class LoginController {
      */
     @IgnoreSecurity
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public AjaxResult login(@RequestParam(value = "kaptcha") String kaptcha, User user, HttpSession session) throws Exception {
+    public AjaxResult login(@RequestBody UserDto user, HttpSession session) throws Exception {
         Object textCode = session.getAttribute(Constant.SESSION_ATTR_TEXT_CODE);
-        if (textCode == null || !kaptcha.equals(textCode.toString())) {
+        if (textCode == null || !user.getKaptcha().equals(textCode.toString())) {
             return AjaxResult.error("验证码错误！");
         }
 
