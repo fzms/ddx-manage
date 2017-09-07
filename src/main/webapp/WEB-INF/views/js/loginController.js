@@ -12,15 +12,18 @@ loginApp.controller("loginController",function($scope,$http){
 
     //点击提交
     $scope.submitForm=function(data){
+        console.log("name:"+$scope.login.loginName);
+        console.log("password:"+$scope.login.loginName);
+        console.log("kaptcha:"+$scope.login.kaptcha);
         if($scope.loginData.$valid) {
-            $http.post("/login",$scope.loginData).then(function (data) {
+            $http.post("/login",$scope.login).then(function (data) {
                 console.log("success");
             }, function (data) {
                 console.log("login error");
-                // console.log($scope.loginData);
+                console.log($scope.login);
             });
         }else{
-            console.log($scope.loginData.loginName);
+            console.log($scope.login.loginName+"login error");
         };
     };
 });

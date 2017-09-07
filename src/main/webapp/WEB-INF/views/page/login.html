@@ -26,29 +26,45 @@
 				<div class="form-box">
 					<label for="loginName" class=""><i class="fa fa-user"></i></label>
 					<div class="input-box" data-ng-class="{ 'has-success':signUpForm.loginName.$valid}">
-						<input type="text" id="loginName" name="loginName" placeholder="请输入4-10位数的用户名" required data-ng-model="login.loginName" data-ng-minlength="4"  data-ng-maxlength="10" >
-						<!-- <p ng-cloak class="fa fa-check input_result success" ng-if="loginData.loginName.$valid"></p>
-						<p ng-cloak class="error" ng-if="(loginData.loginName.$error.minlength || loginData.loginName.$error.maxlength) && loginData.username.$touched">用户名长度应在4-10位之间</p> -->
+						<input type="text" id="loginName" name="loginName"
+							   placeholder="请输入4-10位数的用户名"
+							   required data-ng-model="login.loginName"
+							   data-ng-minlength="4"
+							   data-ng-maxlength="10" >
+                        <!--<p data-ng-cloak class="fa fa-check input_result success"-->
+						   <!--data-ng-if="loginData.loginName.$valid"></p>-->
+						<!--<p data-ng-cloak class="error"-->
+						   <!--data-ng-if="(loginData.loginName.$error.minlength || loginData.loginName.$error.maxlength) && loginData.loginName.$touched">用户名长度应在4-10位之间</p>-->
 					</div>
 				</div>
 				<div class="form-box">
 					<label for="password" class=""><i class="fa fa-lock"></i></label>
 					<div class="input-box">
-						<input type="password" id="password" name="password" placeholder="请输入6-255位数的密码" required data-ng-model="login.passsword" data-ng-minlength="6"  data-ng-maxlength="255">
-						<!-- <p ng-cloak class="fa fa-check input_result success" ng-if="loginData.password.$valid">
-						<p ng-cloak class="error" ng-if="(loginData.password.$error.minlength || loginData.password.$error.maxlength) && loginData.password.$touched">密码长度应在6-255位之间</p> -->
+						<input type="password" id="password" name="password"
+							   placeholder="请输入6-255位数的密码"
+							   required data-ng-model="login.password"
+							   data-ng-minlength="6"
+							   data-ng-maxlength="255">
+						<!--<p data-ng-cloak class="fa fa-check input_result success"-->
+						   <!--data-ng-if="loginData.password.$valid">-->
+						<!--<p data-ng-cloak class="error"-->
+						   <!--data-ng-if="(loginData.password.$error.minlength || loginData.password.$error.maxlength) && loginData.password.$touched">密码长度应在6-255位之间</p>-->
 					</div>
 				</div>
 				<div class="form-box">
 					<label for="kaptcha" class=""><i class="fa fa-rocket"></i></label>
 					<div class="input-box">
-						<input type="text" class="kaptcha" id="kaptcha" name="kaptcha" placeholder="请输入验证码" required data-ng-model="login.kaptcha" data-ng-minlength="4"  data-ng-maxlength="4">
+						<input type="text" class="kaptcha" id="kaptcha" name="kaptcha"
+							   placeholder="请输入验证码"
+							   required
+							   data-ng-model="login.kaptcha"
+							   data-ng-minlength="4"
+							   data-ng-maxlength="4">
 						<div class="kaptcha-box">
 							<a id="change" data-ng-click="kaptcha($event)">
 								<!--<img src="../img/kaptcha.jpg">-->
 								 <img src="/kaptcha/generatecode" id="kaptchaImage" />
 							</a>
-
 						</div>
 					</div>
 				</div>
