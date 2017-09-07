@@ -4,12 +4,19 @@
 var loginApp=angular.module("login",[]);
 loginApp.controller("loginController",function($scope,$http){
     //获取验证码
-    $scope.kaptcha=function(){
-        $http.get("/kaptcha/generatecode",function(data){
-            console.log(data);
+    $scope.kaptcha=function(ev){
+        console.log("success:"+ev.target.src);
+        $http.get("/kaptcha/generatecode").then(function(data){
+            console.log("success:"+data.data);
+        },function(){
+            console.log("error");
         });
+
+        // ,function(data){
+        //     // $('#kaptchaImage').hide().attr('src', '/kaptcha/generatecode');
+        //     console.log("data:"+data);
+        // }
     };
-    $scope.kaptcha();
 
     //点击提交
     $scope.submitForm=function(){

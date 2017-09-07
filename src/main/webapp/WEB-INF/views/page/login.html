@@ -44,9 +44,9 @@
 					<div class="input-box">
 						<input type="text" class="captcha" id="captcha" name="captcha" placeholder="请输入验证码" required data-ng-model="login.captcha" data-ng-minlength="4"  data-ng-maxlength="4">
 						<div class="captcha-box">
-							<a id="change" data-ng-click="kaptcha()">
+							<a id="change" data-ng-click="kaptcha($event)">
 								<!--<img src="../img/captcha.jpg">-->
-								 <img src="/client/captcha/generatecode" id="kaptchaImage" />
+								 <img src="/kaptcha/generatecode" id="kaptchaImage" />
 							</a>
 
 						</div>
