@@ -18,7 +18,6 @@ loginApp.controller("loginController",function($scope,$http){
         if($scope.loginData.$valid) {
             $http.post("/login",$scope.login).then(function (data) {
                 $scope.loginMessage=data.data;
-                console.log($scope.loginMessage.status);
                 if($scope.loginMessage.status==="success"){
                     console.log($scope.loginMessage.msg);
                     $window.location.href = '/index?name='+$scope.login.loginName;
