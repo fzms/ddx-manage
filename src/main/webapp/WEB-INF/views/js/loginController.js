@@ -11,7 +11,7 @@ loginApp.controller("loginController",function($scope,$http){
     };
 
     //点击提交
-    $scope.submitForm=function(data){
+    $scope.submitForm=function(path){
         // console.log("name:"+$scope.login.loginName);
         // console.log("password:"+$scope.login.loginName);
         // console.log("kaptcha:"+$scope.login.kaptcha);
@@ -20,7 +20,8 @@ loginApp.controller("loginController",function($scope,$http){
                 $scope.loginMessage=data.data;
                 if($scope.loginMessage.status==="success"){
                     console.log($scope.loginMessage.msg);
-                    $window.location.href = '/index?name='+$scope.login.loginName;
+                    // location.href="/index?name="+$scope.login.loginName;
+                    location.href="/index?token="+session["SESSION_USER_INFO"];
                 }else{
                     $('#kaptchaImage').hide().attr('src', '/kaptcha/generatecode?' + Math.floor(Math.random() * 100)).fadeIn();
                 }
