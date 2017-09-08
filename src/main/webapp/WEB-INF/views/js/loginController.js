@@ -17,10 +17,10 @@ loginApp.controller("loginController",function($scope,$http){
         // console.log("kaptcha:"+$scope.login.kaptcha);
         if($scope.loginData.$valid) {
             $http.post("/login",$scope.login).then(function (data) {
-                 $scope.loginMessage=data;
-                console.log($scope.loginMessage);
+                $scope.loginMessage=data.data;
+                console.log($scope.loginMessage.status);
                 if($scope.loginMessage.status==="success"){
-                    console.log(data.msg);
+                    console.log($scope.loginMessage.msg);
                     $window.location.href = '/index?name='+$scope.login.loginName;
                 }else{
                     $('#kaptchaImage').hide().attr('src', '/kaptcha/generatecode?' + Math.floor(Math.random() * 100)).fadeIn();
