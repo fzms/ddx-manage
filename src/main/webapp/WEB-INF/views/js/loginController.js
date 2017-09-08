@@ -12,27 +12,24 @@ loginApp.controller("loginController",function($scope,$http){
 
     //点击提交
     $scope.submitForm=function(data){
-        console.log("name:"+$scope.login.loginName);
-        console.log("password:"+$scope.login.loginName);
-        console.log("kaptcha:"+$scope.login.kaptcha);
+        // console.log("name:"+$scope.login.loginName);
+        // console.log("password:"+$scope.login.loginName);
+        // console.log("kaptcha:"+$scope.login.kaptcha);
         if($scope.loginData.$valid) {
             $http.post("/login",$scope.login).then(function (data) {
-                console.log("success");
-            }, function (data) {
+                 $scope.loginMessage=data;
+                console.log($scope.loginMessage);
+                if($scope.loginMessage.status==="success"){
+                    console.log(data.msg);
+                    $window.location.href = '/index?name='+$scope.login.loginName;
+                }else{
+                    $('#kaptchaImage').hide().attr('src', '/kaptcha/generatecode?' + Math.floor(Math.random() * 100)).fadeIn();
+                }
+            }, function () {
                 console.log("login error");
-                console.log($scope.login);
             });
         }else{
             console.log($scope.login.loginName+"login error");
         };
     };
 });
-//
-// console.log("hahah");
-// if($scope.loginData.$valid){
-//     console.log($scope.loginData.username);
-//     alert("提交成功！");
-// }else{
-//     alert("请确认登录用户名是否填写正确");
-//     console.log($scope.loginData.username);
-// }
