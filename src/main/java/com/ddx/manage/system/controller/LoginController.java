@@ -52,7 +52,7 @@ public class LoginController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public AjaxResult login(@RequestBody UserDto user, HttpSession session) throws Exception {
         Object textCode = session.getAttribute(Constant.SESSION_ATTR_TEXT_CODE);
-        if (textCode == null || !user.getKaptcha().equals(textCode.toString())) {
+        if (textCode == null || !user.getKaptcha().toLowerCase().equals(textCode.toString().toLowerCase())) {
             return AjaxResult.error("验证码错误！");
         }
 
