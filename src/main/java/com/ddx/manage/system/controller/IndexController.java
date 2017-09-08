@@ -12,7 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class IndexController {
     @IgnoreSecurity
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String index()throws Exception{
+    public String login()throws Exception{
         return "login";
+    }
+
+
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index()throws Exception{
+        return "index";
     }
 }
