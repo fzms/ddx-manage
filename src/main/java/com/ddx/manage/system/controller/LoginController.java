@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 201728.
@@ -71,9 +73,12 @@ public class LoginController {
         // 生成客户端token，设置用户信息
         String token = tokenManage.generateClientToken(rUser);
         session.setAttribute(Constant.CLIENT_TOKEN_NAME, token);
-
+        System.out.println("---------------------" + token);
         session.setAttribute(Constant.SESSION_USER_INFO, redisManage.getUserInfo(rUser.getId()));
-        return AjaxResult.success("登录成功！");
+        Map<String, Object> map = new HashMap<>();
+        map.put(Constant.CLIENT_TOKEN_NAME, token);
+        map.put(Constant.SESSION_USER_INFO, redisManage.getUserInfo(rUser.getId()));
+        return AjaxResult.success("登录成功！", map);
     }
 
     /**

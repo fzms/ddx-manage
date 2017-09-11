@@ -19,9 +19,12 @@ loginApp.controller("loginController",function($scope,$http){
             $http.post("/login",$scope.login).then(function (data) {
                 $scope.loginMessage=data.data;
                 if($scope.loginMessage.status==="success"){
+                    console.log(data.data.data["CLIENT_TOKEN"]);
+                    console.log(data.data.data["SESSION_USER_INFO"].realName);
+
                     console.log($scope.loginMessage.msg);
                     // location.href="/index?name="+$scope.login.loginName;
-                    location.href="/index?token="+session["SESSION_USER_INFO"];
+                    location.href="/index?CLIENT_TOKEN="+data.data.data["CLIENT_TOKEN"];
                 }else{
                     $('#kaptchaImage').hide().attr('src', '/kaptcha/generatecode?' + Math.floor(Math.random() * 100)).fadeIn();
                 }
