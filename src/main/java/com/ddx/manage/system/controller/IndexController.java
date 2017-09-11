@@ -16,9 +16,9 @@ public class IndexController {
         return "login";
     }
 
-
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
-    public String index()throws Exception{
-        return "index";
-    }
+    //@IgnoreSecurity
+    //@RequestMapping(value = "/index", method = RequestMethod.GET)
+    //public String index()throws Exception{
+    //    return "index";
+    //}
 }
