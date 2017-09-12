@@ -1,5 +1,5 @@
 <ul class="nav1">
-    <li data-ng-repeat="navMenu in navList"
+    <li data-ng-repeat="navMenu in navList|filter:{flag:1}"
         data-ng-click="changeNavMenu(navMenu.name,navMenu.subNav[0].name)"
         data-ng-class="{'active':navMenuActive(navMenu.name,navMenu[0].subNav.name)}">
         <a data-ui-sref="{{navMenu.url}}"><i class="fa {{navMenu.icon?navMenu.icon:'fa-send'}}"></i><span data-ng-bind="navMenu.name"></span></a>
