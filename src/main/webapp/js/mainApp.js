@@ -70,7 +70,7 @@ app.config(function($stateProvider,$urlRouterProvider){
         .state("/product",{
             url:"/product",
             controller:"productController",
-            templateUrl:"tpl/tablePage.html",
+            templateUrl:"views/tpl/tablePage.html",
             resolve:{
                 deps:["$ocLazyLoad",function($ocLazyLoad){
                     return $ocLazyLoad.load("../js/controller/productController.js");
@@ -80,7 +80,7 @@ app.config(function($stateProvider,$urlRouterProvider){
         .state("/warehouse",{
             url:"/warehouse",
             controller:"warehouseController",
-            templateUrl:"tpl/tablePage.html",
+            templateUrl:"views/tpl/tablePage.html",
             resolve:{
                 deps:["$ocLazyLoad",function($ocLazyLoad){
                     return $ocLazyLoad.load("../js/controller/warehouseController.js");
@@ -90,7 +90,7 @@ app.config(function($stateProvider,$urlRouterProvider){
         .state("/warehouse/material",{
             url:"/warehouse/material",
             controller:"materialController",
-            templateUrl:"tpl/tablePage.html",
+            templateUrl:"views/tpl/tablePage.html",
             resolve:{
                 deps:["$ocLazyLoad",function($ocLazyLoad){
                     return $ocLazyLoad.load("../js/controller/materialController.js");
@@ -100,7 +100,7 @@ app.config(function($stateProvider,$urlRouterProvider){
         .state("/warehouse/parts",{
             url:"/warehouse/parts",
             controller:"partsController",
-            templateUrl:"tpl/tablePage.html",
+            templateUrl:"views/tpl/tablePage.html",
             resolve:{
                 deps:["$ocLazyLoad",function($ocLazyLoad){
                     return $ocLazyLoad.load("../js/controller/partsController.js");
@@ -110,7 +110,7 @@ app.config(function($stateProvider,$urlRouterProvider){
         .state("/warehouse/tool",{
             url:"/warehouse/tool",
             controller:"toolController",
-            templateUrl:"tpl/tablePage.html",
+            templateUrl:"views/tpl/tablePage.html",
             resolve:{
                 deps:["$ocLazyLoad",function($ocLazyLoad){
                     return $ocLazyLoad.load("../js/controller/toolController.js");
@@ -120,7 +120,7 @@ app.config(function($stateProvider,$urlRouterProvider){
         .state("/warehouse/machine",{
             url:"/warehouse/machine",
             controller:"machineController",
-            templateUrl:"tpl/tablePage.html",
+            templateUrl:"views/tpl/tablePage.html",
             resolve:{
                 deps:["$ocLazyLoad",function($ocLazyLoad){
                     return $ocLazyLoad.load("../js/controller/machineController.js");
@@ -130,7 +130,7 @@ app.config(function($stateProvider,$urlRouterProvider){
         .state("/order",{
             url:"/order",
             controller:"orderController",
-            templateUrl:"tpl/tablePage.html",
+            templateUrl:"views/tpl/tablePage.html",
             resolve:{
                 deps:["$ocLazyLoad",function($ocLazyLoad){
                     return $ocLazyLoad.load("../js/controller/orderController.js");
@@ -140,7 +140,7 @@ app.config(function($stateProvider,$urlRouterProvider){
         .state("/customer",{
             url:"/customer",
             controller:"customerController",
-            templateUrl:"tpl/tablePage.html",
+            templateUrl:"views/tpl/tablePage.html",
             resolve:{
                 deps:["$ocLazyLoad",function($ocLazyLoad){
                     return $ocLazyLoad.load("../js/controller/customerController.js");
@@ -150,7 +150,7 @@ app.config(function($stateProvider,$urlRouterProvider){
         .state("/staff",{
             url:"/staff",
             controller:"staffController",
-            templateUrl:"tpl/tablePage.html",
+            templateUrl:"views/tpl/tablePage.html",
             resolve:{
                 deps:["$ocLazyLoad",function($ocLazyLoad){
                     return $ocLazyLoad.load("../js/controller/staffController.js");
@@ -160,7 +160,7 @@ app.config(function($stateProvider,$urlRouterProvider){
         .state("/system",{
             url:"/system",
             controller:"systemController",
-            templateUrl:"tpl/tablePage.html",
+            templateUrl:"views/tpl/tablePage.html",
             resolve:{
                 deps:["$ocLazyLoad",function($ocLazyLoad){
                     return $ocLazyLoad.load("../js/controller/systemController.js");
@@ -170,7 +170,7 @@ app.config(function($stateProvider,$urlRouterProvider){
         .state("/system/account",{
             url:"/system/account",
             controller:"accountController",
-            templateUrl:"tpl/tablePage.html",
+            templateUrl:"views/tpl/tablePage.html",
             resolve:{
                 deps:["$ocLazyLoad",function($ocLazyLoad){
                     return $ocLazyLoad.load("../js/controller/accountController.js");
@@ -180,7 +180,7 @@ app.config(function($stateProvider,$urlRouterProvider){
         .state("/system/menu",{
             url:"/system/menu",
             controller:"menuController",
-            templateUrl:"tpl/tablePage.html",
+            templateUrl:"views/tpl/tablePage.html",
             resolve:{
                 deps:["$ocLazyLoad",function($ocLazyLoad){
                     return $ocLazyLoad.load("../js/controller/menuController.js");
@@ -197,4 +197,9 @@ app.controller("appController", ["$scope", "$rootScope", function($scope, $rootS
         // console.log("actionMark.a:"+$scope.actionMark.a);
         // console.log("actionMark.b:"+$scope.actionMark.b);
     });
+
+    //登录页面来的信息
+    // console.log($scope.loginMessage.data["CLIENT_TOKEN"]);
+    // console.log($scope.loginMessage.data["SESSION_USER_INFO"].realName);
+    // console.log($scope.loginMessage.msg);
 }]);

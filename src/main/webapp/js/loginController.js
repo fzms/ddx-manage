@@ -21,11 +21,12 @@ loginApp.controller("loginController",function($scope,$http){
                     console.log($scope.loginMessage.data["CLIENT_TOKEN"]);
                     console.log($scope.loginMessage.data["SESSION_USER_INFO"].realName);
                     console.log($scope.loginMessage.msg);
-                    location.href="/index?CLIENT_TOKEN="+$scope.loginMessage.data["CLIENT_TOKEN"];
+                    location.href="index.html?CLIENT_TOKEN="+$scope.loginMessage.data["CLIENT_TOKEN"];
+                    // window.location.href = "index.html";
+
                 }else{
                     $('#kaptchaImage').hide().attr('src', '/kaptcha/generatecode?' + Math.floor(Math.random() * 100)).fadeIn();
                 }
-            }, function () {
                 console.log("login error");
             });
         }else{
