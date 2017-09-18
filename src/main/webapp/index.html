@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Longer</title>
+    <link rel="icon" type="image/x-icon" href="WEB-INF/views/img/lg.ico"/>
+    <link rel="stylesheet" type="text/css" href="WEB-INF/views/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="WEB-INF/views/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="WEB-INF/views/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="WEB-INF/views/js/plugins/ui-grid/ui-grid.css">
+    <link rel="stylesheet" type="text/css" href="WEB-INF/views/css/public.css">
+</head>
+<body data-ng-app="app" data-ng-controller="appController" class="ofStyle">
+    <header data-ng-include="'tpl/headerTpl.html'"
+            data-ng-controller="headerController">
+    </header>
+    <div  class="content">
+        <aside class="col-lg-2 col-md-3 col-sm-12 no-padding hidden-sm hidden-xs"
+               data-ng-include="'tpl/navTpl.html'"
+               data-ng-controller="navController"
+               data-ng-class="{showNav:showNav}"></aside>
+        <section data-ui-view class="col-lg-10 col-md-9 col-sm-12 ofStyle">
+
+        </section >
+    </div>
+    <footer data-ng-include="'tpl/footerTpl.html'"
+            data-ng-controller="footerController"> </footer>
+</body>
+<script type="text/javascript" src="WEB-INF/views/js/plugins/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="WEB-INF/views/js/plugins/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="WEB-INF/views/js/plugins/angularjs/angular.min.js"></script>
+<script type="text/javascript" src="WEB-INF/views/js/plugins/ui-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script type="text/javascript" src="WEB-INF/views/js/plugins/ui-grid/ui-grid.js"></script>
+<!--<script type="text/javascript" src="../js/plugins/angularjs/angular-animate.min.js"></script>-->
+<script type="text/javascript" src="WEB-INF/views/js/plugins/pdfmake/pdfmake.js"></script>
+<script type="text/javascript" src="WEB-INF/views/js/plugins/pdfmake/vfs_fonts.js"></script>
+<script type="text/javascript" src="WEB-INF/views/js/plugins/ui-router/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="WEB-INF/views/js/plugins/ui-router/ocLazyLoad.min.js"></script>
+<script src="WEB-INF/views/js/mainApp.js"></script>
+<script src="WEB-INF/views/js/headerController.js"></script>
+<script src="WEB-INF/views/js/navController.js"></script>
+<script src="WEB-INF/views/js/footerController.js"></script>
+</html>
