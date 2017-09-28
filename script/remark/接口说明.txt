@@ -21,3 +21,7 @@ POST
 4.退出登录
 GET
 /logout
+
+5.获取用户信息
+/user/info   参数 token
+
